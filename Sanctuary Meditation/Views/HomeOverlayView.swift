@@ -2,7 +2,7 @@ import SwiftUI
 
 extension Color {
     static let sanctuary      = Color(red: 0.87, green: 0.79, blue: 0.65) // pale cream
-    static let sanctuaryAmber = Color(red: 0.78, green: 0.55, blue: 0.18) // dark warm amber
+    static let sanctuaryAmber = Color(red: 0.88, green: 0.46, blue: 0.04) // rich deep amber
 }
 
 struct HomeOverlayView: View {
@@ -96,7 +96,7 @@ struct HomeOverlayView: View {
             .frame(maxWidth: isLandscape ? 360 : 380)
             .background {
                 RoundedRectangle(cornerRadius: 20)
-                    .fill(.ultraThinMaterial)
+                    .fill(Color(red: 0.45, green: 0.65, blue: 0.95).opacity(0.22))
             }
             .clipShape(RoundedRectangle(cornerRadius: 20))
             .overlay(
@@ -104,10 +104,10 @@ struct HomeOverlayView: View {
                     .strokeBorder(
                         LinearGradient(
                             colors: [
-                                Color.white.opacity(0.45),
-                                Color.white.opacity(0.15),
+                                Color.white.opacity(0.65),
+                                Color.white.opacity(0.20),
                                 Color.white.opacity(0.05),
-                                Color.white.opacity(0.20)
+                                Color.white.opacity(0.30)
                             ],
                             startPoint: .topLeading,
                             endPoint: .bottomTrailing
@@ -115,8 +115,8 @@ struct HomeOverlayView: View {
                         lineWidth: 1
                     )
             )
-            .shadow(color: .black.opacity(0.18), radius: 28, x: 0, y: 0)
-            .shadow(color: .black.opacity(0.22), radius: 6, x: 0, y: 4)
+            .shadow(color: .black.opacity(0.38), radius: 24, x: 0, y: 10)
+            .shadow(color: .black.opacity(0.18), radius: 4, x: 0, y: 2)
 
             // MARK: Transcript — right edge
             HStack {
@@ -189,12 +189,13 @@ struct HomeOverlayView: View {
             .padding(.vertical, 7)
             .background(
                 Capsule()
-                    .fill(isSelected ? Color.sanctuaryAmber.opacity(0.18) : Color.white.opacity(0.05))
+                    .fill(isSelected ? Color.sanctuaryAmber.opacity(0.35) : Color.black.opacity(0.30))
             )
             .overlay(
                 Capsule()
                     .stroke(isSelected ? Color.sanctuaryAmber.opacity(0.6) : Color.sanctuaryAmber.opacity(0.25), lineWidth: 1)
             )
+            .shadow(color: .black.opacity(0.22), radius: 4, x: 0, y: 2)
         }
     }
 }
