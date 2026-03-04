@@ -8,6 +8,29 @@ enum SceneType: String, CaseIterable, Codable {
     case beach    = "Beach"
     case sunset   = "Sunset"
     case dawnCove = "Dawn Cove"
+    case teahouse = "Tea House"
+
+    var imageName: String {
+        switch self {
+        case .forest:   return "scene-forest"
+        case .stream:   return "scene-stream"
+        case .beach:    return "scene-beach"
+        case .sunset:   return "scene-sunset"
+        case .dawnCove: return "scene-cove"
+        case .teahouse: return "teahouse"
+        }
+    }
+
+    var icon: String {
+        switch self {
+        case .forest:   return "tree.fill"
+        case .stream:   return "water.waves"
+        case .beach:    return "sun.max.fill"
+        case .sunset:   return "sunset.fill"
+        case .dawnCove: return "sunrise.fill"
+        case .teahouse: return "cup.and.saucer.fill"
+        }
+    }
 }
 
 // MARK: - Ambient Sound
@@ -17,6 +40,13 @@ enum SceneType: String, CaseIterable, Codable {
 enum AmbientType: String, CaseIterable, Codable {
     case drone = "Ethereal Drone"
     case wind  = "Forest Wind"
+
+    var icon: String {
+        switch self {
+        case .drone: return "music.note"
+        case .wind:  return "wind"
+        }
+    }
 }
 
 // MARK: - App Phase
