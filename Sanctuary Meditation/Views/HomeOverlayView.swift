@@ -114,11 +114,11 @@ struct HomeOverlayView: View {
                         HStack(spacing: 14) {
                             ZStack {
                                 Circle()
-                                    .fill(Color.sanctuary.opacity(0.15))
+                                    .fill(Color.sanctuaryAmber.opacity(0.25))
                                     .frame(width: 44, height: 44)
                                 Image(systemName: "play.fill")
                                     .font(.system(size: 14, weight: .regular))
-                                    .foregroundStyle(Color.sanctuary.opacity(0.85))
+                                    .foregroundStyle(Color.sanctuary)
                                     .offset(x: 2)
                             }
                             Text("Begin")
@@ -128,6 +128,7 @@ struct HomeOverlayView: View {
                                 .foregroundStyle(Color.sanctuary.opacity(0.9))
                         }
                     }
+                    .shadow(color: Color.sanctuaryAmber.opacity(0.45), radius: 14, x: 0, y: 0)
                     .padding(.bottom, 4)
                 }
                 .padding(.horizontal, 14)
