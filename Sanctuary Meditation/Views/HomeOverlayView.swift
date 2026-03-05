@@ -1,10 +1,5 @@
 import SwiftUI
 
-extension Color {
-    static let sanctuary      = Color(red: 0.87, green: 0.79, blue: 0.65) // pale cream
-    static let sanctuaryAmber = Color(red: 0.88, green: 0.46, blue: 0.04) // rich deep amber
-}
-
 struct HomeOverlayView: View {
     @Environment(SessionStore.self) private var session
     @Environment(\.verticalSizeClass) private var verticalSizeClass
@@ -22,7 +17,7 @@ struct HomeOverlayView: View {
                     Text("Sanctuary")
                         .font(.system(size: 38, weight: .light, design: .serif))
                         .tracking(6)
-                        .foregroundStyle(Color(red: 0.88, green: 0.68, blue: 0.08))
+                        .foregroundStyle(Color.sanctuaryGold)
                         .shadow(color: .white.opacity(0.6), radius: 8, x: 0, y: 0)
                     Text("A Quiet Space")
                         .font(.system(size: 10, weight: .regular))
@@ -82,7 +77,7 @@ struct HomeOverlayView: View {
                             .tracking(4)
                             .textCase(.uppercase)
                     }
-                    .foregroundStyle(Color(red: 0.88, green: 0.68, blue: 0.08))
+                    .foregroundStyle(Color.sanctuaryGold)
                     .padding(.horizontal, 28)
                     .padding(.vertical, 8)
                     .background(Capsule().fill(Color.white.opacity(0.15)))
